@@ -10,8 +10,9 @@ state("Dott","Steam")
 
 state("Monkey2","Steam")
 {
-    float igt: 0x001CFC00,0x6D;
+    float igt: 0x001CFC00,0x6C;
 }
+
 state("GrimFandango","Steam")
 {
     float igt: 0x001CFC00,0x6D;
