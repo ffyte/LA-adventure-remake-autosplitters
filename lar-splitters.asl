@@ -36,7 +36,7 @@ state("MISE","Pirate")
 }
 
 
-init
+init //NOT WORKING?
 {
 	byte[] exeMD5HashBytes = new byte[0];
 	using (var md5 = System.Security.Cryptography.MD5.Create())
