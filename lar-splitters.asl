@@ -1,3 +1,5 @@
+//Note: It is not recommended to run multiple games at the same time! (O'rly?)
+
 state("Dott","GoG")
 {
     float igt: 0x00324338, 0x64;
@@ -12,16 +14,11 @@ state("Monkey2","Steam")
 {
     float igt: 0x001CFC00,0x6C;
 }
-
-state("GrimFandango","Steam")
-{
-    float igt: 0x1CFC00,0x6C;
-}
-
 state("MISE","Steam")
 {
     float igt: 0x001B9858,0x38;
 }
+
 
 init
 {
@@ -36,20 +33,22 @@ exeMD5HashBytes = md5.ComputeHash(s);
 var MD5Hash = exeMD5HashBytes.Select(x =>
 x.ToString("X2")).Aggregate((a, b) => a + b);
 print("MD5Hash: " + MD5Hash.ToString()); //Lets DebugView show me the MD5Hash of the game executable
-
+//Dottr gog
 if(MD5Hash == "77805e16a4c90262f0badb725ea4e1d7"){
-  version ="Gog";
+  version ="GoG";
   }
-
+//Dottr steam
 else if (MD5Hash =="9b9fd257777be2233e9458f1174081f0"){
     version = "Steam";
   }
-else if( MD5Hash =="6e8094e2e93ffe798beb95dfc26280b3"|| MD5Hash =="310dc393dd777812dfa0fa2e99a89b5e" || MD5Hash =="dc7381d94b0d0ffd1a0223e9bafc1a26" ) {
+//MI2SE steam
+else if( MD5Hash =="6e8094e2e93ffe798beb95dfc26280b3"){
     version = "Steam";
 }
-
+//MISE steam
+else if(MD5Hash =="dc7381d94b0d0ffd1a0223e9bafc1a26" ) {
+    version="Steam";
 }
-
 start
 {
     return old.igt == 0 && current.igt > 0;
@@ -75,5 +74,5 @@ gameTime
 //MISE steam: dc7381d94b0d0ffd1a0223e9bafc1a26
 //GFR steam: 310dc393dd777812dfa0fa2e99a89b5e
 //MI2SE steam: 6e8094e2e93ffe798beb95dfc26280b3
-//GFR gog:
-//FTR gog:
+//GFR gog: 84fb9411963702ad48b2e5f716cf43cd
+//FTR gog: e9564071a1bebfd1c46645269eaf3919
