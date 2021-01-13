@@ -15,7 +15,7 @@ state("Monkey2","Steam")
 
 state("GrimFandango","Steam")
 {
-    float igt: 0x001CFC00,0x6D;
+    float igt: 0x1CFC00,0x6C;
 }
 
 state("MISE","Steam")
@@ -41,9 +41,12 @@ if(MD5Hash == "77805e16a4c90262f0badb725ea4e1d7"){
   version ="Gog";
   }
 
-else if (MD5Hash =="9b9fd257777be2233e9458f1174081f0" || MD5Hash =="6e8094e2e93ffe798beb95dfc26280b3"|| MD5Hash =="310dc393dd777812dfa0fa2e99a89b5e" || MD5Hash =="dc7381d94b0d0ffd1a0223e9bafc1a26" ) {
-  version = "Steam";
+else if (MD5Hash =="9b9fd257777be2233e9458f1174081f0"){
+    version = "Steam";
   }
+else if( MD5Hash =="6e8094e2e93ffe798beb95dfc26280b3"|| MD5Hash =="310dc393dd777812dfa0fa2e99a89b5e" || MD5Hash =="dc7381d94b0d0ffd1a0223e9bafc1a26" ) {
+    version = "Steam";
+}
 
 }
 
