@@ -13,7 +13,6 @@ state("Dott","Steam")
 state("Dott","Pirate")
 {
 	float igt: 0x0031C0F0, 0x64;
- //   print("Pirate version detected");
 }
 
 state("Monkey2","Steam")
@@ -36,7 +35,7 @@ state("MISE","Pirate")
 }
 
 
-init //NOT WORKING?
+init
 {
 	byte[] exeMD5HashBytes = new byte[0];
 	using (var md5 = System.Security.Cryptography.MD5.Create())
@@ -49,32 +48,35 @@ init //NOT WORKING?
 	var MD5Hash = exeMD5HashBytes.Select(x => x.ToString("X2")).Aggregate((a, b) => a + b);
 	print("MD5Hash: " + MD5Hash.ToString()); //Lets DebugView show me the MD5Hash of the game executable
 	//Dottr gog
-	if(MD5Hash =="77805e16a4c90262f0badb725ea4e1d7"){
+	if(MD5Hash =="77805E16A4C90262F0BADB725EA4E1D7"){
 		version = "GoG";
 	}
 	//Dottr steam
-	else if(MD5Hash =="ac53d9ffe90a01aa26abb5e0861e6d46"){
+	else if(MD5Hash =="AC53D9FFE90A01AA26ABB5E0861E6D46"){
 		version = "Steam";
 	}
 	//Dottr pirate
-	else if(MD5Hash =="9b9fd257777be2233e9458f1174081f0"){
+	else if(MD5Hash =="9B9FD257777BE2233E9458F1174081F0"){
 		version = "Pirate";
 	}
 	//MI2SE steam
-	else if(MD5Hash =="6e8094e2e93ffe798beb95dfc26280b3"){
+	else if(MD5Hash =="6E8094E2E93FFE798BEB95DFC26280B3"){
 		version = "Steam";
 	}
 	//MISE steam
-	else if(MD5Hash =="dc7381d94b0d0ffd1a0223e9bafc1a26"){
+	else if(MD5Hash =="DC7381D94B0D0FFD1A0223E9BAFC1A26"){
 		version = "Steam";
 	}
 	//MISE pirate
-	else if(MD5Hash =="0cf52a122dc51bb94c33ba1b28b5005e"){
+	else if(MD5Hash =="0CF52A122DC51BB94C33BA1B28B5005E"){
 		version = "Pirate";
 	}
 	//MISE2 pirate
-	else if (MD5Hash =="8327619f8697b7f0524b77dc568c6a53"){
+	else if (MD5Hash =="8327619F8697B7F0524B77DC568C6A53"){
 		version = "Pirate";
+	}
+	else {
+		version = "Unknown, contact developer";
 	}
 }
 
