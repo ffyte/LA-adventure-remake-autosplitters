@@ -7,7 +7,7 @@ state("Dott","GoG")
 
 state("Dott","Steam")
 {
-	float igt: 0x0031C0F0, 0x64;
+	float igt: 0x003244B0, 0x64;
 }
 
 state("Dott","Pirate")
