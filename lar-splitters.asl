@@ -81,16 +81,14 @@ init
 	}
 
 	//Additional time for saves/loads
-
+	vars.addtime=0;
 }
 
-startup{
- float addtime=0;
-}
+
 update
 {
 if(old.igt > current.igt) {
-	vars.addtime+=old.igt-current.igt;
+	//vars.addtime+=old.igt-current.igt;
 	}
 	return true;
 }
