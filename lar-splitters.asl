@@ -35,6 +35,7 @@ state("MISE","Pirate")
 }
 
 
+
 init
 {
 	byte[] exeMD5HashBytes = new byte[0];
@@ -78,23 +79,40 @@ init
 	else {
 		version = "Unknown, contact developer";
 	}
+
+	//Additional time for saves/loads
+
+}
+
+startup{
+ float addtime=0;
+}
+update
+{
+if(old.igt > current.igt) {
+	vars.addtime+=old.igt-current.igt;
+	}
+	return true;
 }
 
 start
 {
 	return old.igt == 0 && current.igt > 0;
+	vars.addtime=0;
 }
 	
 reset
 {
 	return current.igt = -1;
+	vars.addtime=0;
 }
 		
    
 gameTime 
 {
+	
 	if(current.igt != old.igt) {
-	return TimeSpan.FromSeconds(current.igt);
+	return TimeSpan.FromSeconds(current.igt+vars.addtime);
 	}
 }
 		
