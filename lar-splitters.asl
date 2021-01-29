@@ -87,29 +87,44 @@ init
 
 update
 {
-if(old.igt > current.igt) {
-	//vars.addtime+=old.igt-current.igt;
+//print("old "+ old.igt.ToString());
+//print("new "+ current.igt.ToString());
+if(old.igt > current.igt && current.igt != 0) {
+	vars.addtime+=old.igt-current.igt;
+	print("old and new "+vars.addtime +" "+ (old.igt-current.igt).ToString());
 	}
-	return true;
 }
 
 start
 {
-	return old.igt == 0 && current.igt > 0;
+	if(old.igt ==0 && current.igt >0){
 	vars.addtime=0;
+	print("Timer start: "+vars.addtime.ToString());
+	return true;
+	}
+	
+	
 }
 	
+
 reset
 {
-	return current.igt = -1;
-	vars.addtime=0;
+	if(current.igt ==0){
+	return true;
+	}
 }
 		
+//don't update time in the menu removes the jitter
+isLoading
+{
+	return current.igt == old.igt;
+}
    
 gameTime 
 {
-	
 	if(current.igt != old.igt) {
+	//print("updateme! " + current.igt.ToString()+ " " + old.igt.ToString() +" "+ vars.addtime.ToString());
+	
 	return TimeSpan.FromSeconds(current.igt+vars.addtime);
 	}
 }
