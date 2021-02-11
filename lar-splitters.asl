@@ -5,11 +5,14 @@ state("Dott","GoG")
 	float igt: 0x00324338, 0x64;
 }
 
-state("Dott","Steam")
+state("Dott","Steam-old")
 {
 	float igt: 0x003244B0, 0x64;
 }
-
+state("Dott","Steam")
+{
+	float igt: 0x0033C358, 0x64;
+}
 state("Dott","Pirate")
 {
 	float igt: 0x0031C0F0, 0x64;
@@ -53,12 +56,16 @@ init
 		version = "GoG";
 	}
 	//Dottr steam
-	else if(MD5Hash =="AC53D9FFE90A01AA26ABB5E0861E6D46" | MD5Hash == "FA9702B2FAA12A924888d8C43d4C3B28"){
+	else if(MD5Hash =="FA9702B2FAA12A924888D8C43D4C3B28"){
 		version = "Steam";
 	}
 	//Dottr pirate
 	else if(MD5Hash =="9B9FD257777BE2233E9458F1174081F0"){
 		version = "Pirate";
+	}
+	//Dottr steam old
+	else if(MD5Hash =="AC53D9FFE90A01AA26ABB5E0861E6D46"){
+		version="Steam-old";
 	}
 	//MI2SE steam
 	else if(MD5Hash =="6E8094E2E93FFE798BEB95DFC26280B3"){
@@ -133,7 +140,7 @@ gameTime
 //dottr gog:    77805E16A4C90262F0BADB725EA4E1D7
 //dottr pirate: 9B9FD257777BE2233E9458F1174081F0
 //dottr steam:  AC53D9FFE90A01AA26ABB5E0861E6D46
-//dottr steam 2021: FA9702B2FAA12A924888d8C43d4C3B28
+//dottr steam 2021: FA9702B2FAA12A924888D8C43D4C3B28
 //MISE steam:   DC7381D94B0D0FFD1A0223E9BAFC1A26
 //GFR steam:    310DC393DD777812DFA0FA2E99A89B5E
 //MI2SE steam:  6E8094E2E93FFE798BEB95DFC26280B3
