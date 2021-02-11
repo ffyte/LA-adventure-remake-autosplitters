@@ -20,7 +20,7 @@ state("Monkey2","Steam")
 	float igt: 0x001CFC00, 0x6C;
 }
 
-state("Monkey2","Pirate")
+state("Monkey2","GoG")
 {
 	float igt: 0x001CFC00, 0x6C;
 }
@@ -29,7 +29,7 @@ state("MISE","Steam")
 {
 	float igt: 0x001B9858, 0x38;
 }
-state("MISE","Pirate")
+state("MISE","GoG")
 {
 	float igt: 0x001B9858, 0x38;
 }
@@ -69,11 +69,11 @@ init
 	}
 	//MISE pirate
 	else if(MD5Hash =="0CF52A122DC51BB94C33BA1B28B5005E"){
-		version = "Pirate";
+		version = "GoG";
 	}
 	//MISE2 pirate
 	else if (MD5Hash =="8327619F8697B7F0524B77DC568C6A53"){
-		version = "Pirate";
+		version = "GoG";
 	}
 	else {
 		version = "Unknown, contact developer";
@@ -107,5 +107,5 @@ gameTime
 //MI2SE steam:  6E8094E2E93FFE798BEB95DFC26280B3
 //GFR gog:      84FB9411963702AD48B2E5F716CF43CD
 //FTR gog:      E9564071A1BEBFD1C46645269EAF3919
-//MISE pirate:  0CF52A122DC51BB94C33BA1B28B5005E
-//MI2SE pirate: 8327619F8697B7F0524B77DC568C6A53
+//MISE gog & pirate:  0CF52A122DC51BB94C33BA1B28B5005E
+//MI2SE gog & pirate: 8327619F8697B7F0524B77DC568C6A53
