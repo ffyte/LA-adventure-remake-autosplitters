@@ -2,6 +2,11 @@
 
 state("Dott","GoG")
 {
+	float igt: 0x0033B200, 0x64;
+}
+
+state("Dott","GoG-old")
+{
 	float igt: 0x00324338, 0x64;
 }
 
@@ -51,8 +56,11 @@ init
 	}
 	var MD5Hash = exeMD5HashBytes.Select(x => x.ToString("X2")).Aggregate((a, b) => a + b);
 	print("MD5Hash: " + MD5Hash.ToString()); //Lets DebugView show me the MD5Hash of the game executable
-	//Dottr gog
+	//Dottr gog old
 	if(MD5Hash =="77805E16A4C90262F0BADB725EA4E1D7"){
+		version = "GoG-old";
+	}
+	else if (MD5Hash =="D99E9EB61124C875E2F67AA20B3DB559") {
 		version = "GoG";
 	}
 	//Dottr steam
@@ -138,6 +146,7 @@ gameTime
 		
 //MD5s
 //dottr gog:    77805E16A4C90262F0BADB725EA4E1D7
+//dottr gog 2021: D99E9EB61124C875E2F67AA20B3DB559
 //dottr pirate: 9B9FD257777BE2233E9458F1174081F0
 //dottr steam:  AC53D9FFE90A01AA26ABB5E0861E6D46
 //dottr steam 2021: FA9702B2FAA12A924888D8C43D4C3B28
