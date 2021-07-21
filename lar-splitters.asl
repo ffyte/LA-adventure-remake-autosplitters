@@ -60,6 +60,7 @@ init
 	if(MD5Hash =="77805E16A4C90262F0BADB725EA4E1D7"){
 		version = "GoG-old";
 	}
+	//Dottr gog 2021
 	else if (MD5Hash =="D99E9EB61124C875E2F67AA20B3DB559") {
 		version = "GoG";
 	}
