@@ -97,7 +97,6 @@ init
 	}
 	//MISE2 amazon
 	else if (MD5Hash =="59956460FE3B22099D1B2AC195F1C673"){
-			    59956460FE3B22099D1B2AC195F1C673
 		version = "Amazon";
 	}
 	else {
