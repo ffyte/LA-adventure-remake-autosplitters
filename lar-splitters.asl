@@ -41,7 +41,7 @@ state("MISE","GoG")
 {
 	float igt: 0x001B9858, 0x38;
 }
-state{"Monkey2","Amazon")
+state("Monkey2","Amazon")
 {
 	float igt: 0x001CD798, 0x6C;
 }
@@ -97,6 +97,7 @@ init
 	}
 	//MISE2 amazon
 	else if (MD5Hash =="59956460FE3B22099D1B2AC195F1C673"){
+			    59956460FE3B22099D1B2AC195F1C673
 		version = "Amazon";
 	}
 	else {
