@@ -41,7 +41,10 @@ state("MISE","GoG")
 {
 	float igt: 0x001B9858, 0x38;
 }
-
+state{"Monkey2","Amazon")
+{
+	float igt: 0x001CD798, 0x6C;
+}
 
 
 init
@@ -91,6 +94,10 @@ init
 	//MISE2 pirate
 	else if (MD5Hash =="8327619F8697B7F0524B77DC568C6A53"){
 		version = "GoG";
+	}
+	//MISE2 amazon
+	else if (MD5Hash =="59956460FE3B22099D1B2AC195F1C673"){
+		version = "Amazon";
 	}
 	else {
 		version = "Unknown, contact developer";
@@ -158,3 +165,4 @@ gameTime
 //FTR gog:      E9564071A1BEBFD1C46645269EAF3919
 //MISE gog & pirate:  0CF52A122DC51BB94C33BA1B28B5005E
 //MI2SE gog & pirate: 8327619F8697B7F0524B77DC568C6A53
+//MI2SE amazon: 59956460FE3B22099D1B2AC195F1C673
